@@ -1,0 +1,104 @@
+body {
+	background-color: #232323;
+	margin: 0;
+	font-family: "Montserrat", "Avenir";
+}
+
+.square {
+	width: 30%;
+	background: purple;
+	padding-bottom: 30%; 
+	float: left;
+	margin: 1.66%;
+	/*Lets us specify how much we want the corners to be rounded by*/
+	/*greater than 50% will make the squares into circles*/
+	border-radius: 50%;
+	transition: background 0.6s;
+	/*This adds additional browser compatibility for transition (webkit is for safari and */
+	/*moz is for mozilla)*/
+	-webkit-transition: background 0.6s;
+	-moz-transition: background 0.6s;
+}
+
+#container {
+	margin: 20px auto;
+	max-width: 600px;
+}
+
+h1 {
+	text-align: center;
+	/*line-height controls the amount of space between the lines*/
+	line-height: 1.1;
+	font-weight: normal;
+	color: white;
+	background-color: steelblue;
+	margin: 0;
+	text-transform: uppercase;
+	/*This tells us we are putting padding of 20px to the top and bottom of the h1*/
+	padding: 20px 0;
+
+}
+
+button {
+	border: none;
+	background: none;
+	text-transform: uppercase;
+	height: 100%;
+	font-weight: 700;
+	color: steelblue;
+	letter-spacing: 1px
+	/*Inherit tells is that the font-size should be "inherited"*/
+	/*from the parent element*/
+	font-size: inherit;
+	/*We can use a CSS transition property to control the amount of time that the */
+	/*fade-in/fade-out takes so that it is not as abrupt as how it is currently*/
+	/*all - specifies when we want the transition to start (all signifies that we want it to occur, as soon as any change is detected)*/
+	/*In our case this will be when the color or background changes.*/
+	/*Second property is duration, which tells us how long it has to take*/
+	transition: all 0.3s;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	/*removes the blue outline around the numbers*/
+	outline: none;
+}
+
+.selected {
+	color: white;
+	background-color: steelblue;
+}
+
+
+button:hover {
+	color: white;
+	background: steelblue;
+}
+
+
+#colorDisplay {
+	font-size: 200%;
+}
+
+/*Creating space for the messageDisplay element*/
+#message {
+	font-family: "Montserrat", "Avenir";
+	display: inline-block;
+	width: 20%
+}
+
+/* (2) So our solution is to simply remove this span, since then our stripe selector */
+/*becomes the most specific, and we get the behaviour we want*/
+/*span {
+	color: white;
+}*/
+
+/* (1) An issue we encounter is that now our try again text is not visible since it
+it is set to white color, and our stripe is white*/
+/*We might be tempted to simply set our text color to be within stripe but
+note that this will not work since we are setting the color of all spans as*/
+/*white, which makes it more specific than our id selector below.*/
+#stripe {
+	background: white;
+	height: 30px;
+	text-align: center;
+}
+

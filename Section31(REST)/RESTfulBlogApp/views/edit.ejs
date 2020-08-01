@@ -1,0 +1,35 @@
+<%- include("partials/header") %>
+
+<div class="ui main text container segment">
+    <div class="ui huge header">Edit <%= blog.title %></div>
+    <!-- Note that currently, PUT requests are currently not supported -->
+    <!-- from HTML forms. It defaults to a GET request, which is what we -->
+    <!-- were experiencing prior. (as the page redirects to a show page) -->
+
+    <!-- To counterract this, we are using a library called method override, -->
+    <!-- which essentially allows us to fake a PUT request -->
+    <form class="ui form" action="/blogs/<%= blog._id %>?_method=PUT" method="POST">
+        
+        <!-- We see some new syntax in the naming of the blogs -->
+        <!-- Since we have grouped all the elements of the blog in one spot -->
+        <!-- like this. if we access the form elements using req.body.blog, -->
+        <!-- we get an object containg all three of the fields completed -->
+        <div class="field">
+            <!-- We can use the value parameter to fill the content with what was -->
+            <!-- there before -->
+            <label>Title</label>
+            <input type="text" name="blog[title]" value="<%= blog.title %>">
+        </div>
+        <div class="field">
+            <label>Image</label>
+            <input type="text" name="blog[image]" value="<%= blog.image %>">
+        </div>
+        <div class="field">
+            <label>Blog Content</label>
+            <textarea name="blog[body]"><%= blog.body %></textarea>
+        </div>
+        <input class="ui black big basic button" type="submit">
+    </form>
+</div>
+
+<%- include("partials/footer") %>

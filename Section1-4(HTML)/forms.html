@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Form Demo</title>
+</head>
+<body>
+	<h1>Login</h1>
+	<!-- The form tag has two attributes -->
+	<!-- action: where to send the data to -->
+	<!-- method: what http method (get/post) -->
+	<!-- When action is not specified, the form is simply refreshed everytime you click submit, and method is set to get -->
+	<form>
+		<!-- Note that the placeholder attribute lets you place placeholder text within the text field -->
+		<!-- After adding the name attribute to each of the input tages, a query string is added to the end of the URL like follows, html?username=Alap&password=asdkjsad -->
+		<!-- Its a question mark, followed by key value pairs, seperated by the anpersand sign -->
+		<!-- This lets us retrieve pieces of data by name -->
+		<!-- The key takeaway is that we can send data this way to a particular server, and extract it using our own server  -->
+		<!-- We can add labels to specify where to fill out each field -->
+		<!-- We can add "required" as an attribute, which enforces that this field has to be filled out (known as a presense validation) -->
+		<!-- Also, if we change the type of username to email, it will enforce the email formatting properly -->
+		<label for="email">Email:</label>
+		<input id="email" name="username" type="email" placeholder="email" required>
+		<label for="password">Password:</label>
+		<input id="password" name="password" type="password" placeholder="password">
+		<!-- Note the similaries between the button element and the input type submit tag -->
+		<!-- <button>Submit</button> -->
+		<input type="submit">
+	</form>
+
+</body>
+</html>

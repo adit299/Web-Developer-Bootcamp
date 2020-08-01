@@ -1,0 +1,39 @@
+#content {
+	text-align: center;
+	padding-top: 25%;
+	text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
+				 0px 8px 13px rgba(0,0,0,0.1),
+				 0px 18px 23px rgba(0,0,0,0.1);
+	/*For text shadow the values are x-offset y-offset blur-radius color*/
+	/*x and y offset control the shadow's distance from the text*/
+
+}
+
+body {
+	background: url(https://images.unsplash.com/photo-1545529468-42764ef8c85f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1952&q=80);
+	background-size: cover;
+	background-position: center;
+	font-family: Lato;
+	/*Why does changing color here not effect the other elements? (navbar text, text on the button, etc.)*/
+	/*It is because bootstrap already has more specific selectors to style those elements.*/
+	/*Thus, this styling will only effect our h1 and h3*/
+	color: white;
+}
+
+/*This code ensures that the html encompasses the entire webpage, so that our image is not partially cut off at the bottom*/
+html {
+	height: 100%;
+}
+
+h1 {
+	font-weight: 700;
+	font-size: 5em;
+}
+
+/*Gives the HR the illusion of a shadow*/
+hr {
+	width: 400px;
+	border-top: 1px solid #f8f8f8;
+	border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+

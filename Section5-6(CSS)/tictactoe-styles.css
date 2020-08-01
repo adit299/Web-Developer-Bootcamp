@@ -1,0 +1,33 @@
+/*Within the solutions, two classes were created, which each had either top and bottom borders or left and right borders...*/
+/*and each tile was given one of those classes*/
+/*For the center tile, both these classes were given to it*/
+
+
+
+h1 {
+	text-align: center;
+}
+
+table {
+	margin: 0 auto;
+}
+
+.spot1 {
+	border-bottom: 1px solid black;
+	border-right: 1px solid black;
+	width: 100px;
+	height: 100px;
+}
+
+.spot2 {
+	border-bottom: 1px solid black;
+	width: 100px;
+	height: 100px;
+}
+
+.spot3 {
+	border-right: 1px solid black;
+	width: 100px;
+	height: 100px;	
+}
+

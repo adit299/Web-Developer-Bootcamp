@@ -1,0 +1,102 @@
+/*We should organize our CSS in order of specifity*/
+/*Least specific (body) at the top, to most specific*/
+
+
+
+#container {
+/*	border: solid 2px gray;*/
+	width: 360px;
+	background: "f7f7f7";
+	margin: 100px auto;
+	box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+	background: #2980b9;
+	color: white;
+	margin: 0;
+	padding: 10px;
+	text-transform: uppercase;
+	font-size: 24px;
+	font-weight: normal;
+}
+
+/*Aligns the plus sign to the right*/
+.fa-plus {
+	float: right;
+}
+
+ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+li {
+	background: #fff;
+	height: 40px;
+	/*Centers the text within the li element*/
+	line-height: 40px;
+	color: #666;
+}
+
+/*Selects every other list element and gives it a gray background*/
+li:nth-child(2n) {
+	background: #f7f7f7;
+}
+
+
+/*When we hover over an li element, we want the width of the span to increase to 40px*/
+li:hover span {
+	width: 40px;
+	opacity: 1.0;
+}
+
+
+span {
+	background: #e74c3c;
+	height: 40px;
+	margin-right: 20px;
+	text-align: center;
+	color: white;
+	width: 0px;
+	display: inline-block;
+	/*Linear says we want the transition to increase at a steady pace*/
+	transition: 0.2s linear;
+	/*Ensures that the image is not visible on the gray li items, when it has not been clicked*/
+	opacity: 0;
+}
+
+input {
+	font-size: 18px;
+	color: #2980b9;
+	background-color: #f7f7f7;
+	width: 100%;
+	padding: 13px 13px 13px 20px;
+	/*Ensures that our input property fits nicely within our container*/
+	box-sizing: border-box;
+	/*There was a small gap between the add-todo and todo-list tasks, so this invisible
+	border helps make all the lines straight*/
+	border: 3px solid rgba(0, 0, 0);
+}
+
+/*Refers to the outline around the input box when we click on it*/
+input:focus {
+	background: #fff;
+	border: 3px solid #2980b9;
+	outline: none;
+}
+
+/*I obtained the gradient background from uiGradients.com*/
+body {
+	font-family: 'Roboto', sans-serif;
+	background: #000046;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #1CB5E0, #000046);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #1CB5E0, #000046); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+
+.completed {
+	color: gray;
+	text-decoration: line-through;
+}

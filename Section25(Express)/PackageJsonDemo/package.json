@@ -1,0 +1,20 @@
+// The package.json file is an important part of any Javascript project since it contains metadata pertaining
+// to our current project. We use npm init to create a package.json file, and when we install additional packages
+// we can use npm install <packagename> --save to add that package as a dependency in our package.json file
+
+// From here on out, we will have a package.json file standard in all of our projects.
+
+{
+  "name": "packagejsondemo",
+  "version": "1.0.0",
+  "description": "Simple Package.json demo",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Adit Krishnan",
+  "license": "ISC",
+  "dependencies": {
+    "cat-me": "^1.0.3"
+  }
+}

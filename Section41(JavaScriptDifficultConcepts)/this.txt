@@ -1,0 +1,448 @@
+- "this" can be determined using four rules (explicit, object/implicit, explicit, new)
+
+(1) Global Context
+- (when this is not inside of a declated object), when we see "this", just out in the wild, it refers to the global object, which in the case of the browser is the window
+object
+- Note the following typed into the console in the browser:
+
+var alap = "baby"
+undefined
+
+this.alap === alap
+true
+
+this.alap = "monkey"
+"monkey"
+
+alap
+"monkey"
+
+- Instead of "this" we could've replaced it with "window", and the effect would've been the same
+
+- Creating a global variable is also the same as declaring a variable using "this", as we can see from the code block above.
+
+- Let's see some more examples of global context, in the following lines of code:
+
+console.log(this)
+
+function whatIsThis() {
+    return this;
+}
+
+function variablesInThis() {
+    this.person = "Elie"
+}
+
+console.log(person)
+// So note that although we declared this variable in a function's scope, because we used the "this" operator, it is equivalent to 
+// declaring a global variable
+
+whatIsThis()
+// Recall in a browser, that this is equivalent to the window object, we are simply returned the window object
+
+
+- Creating global variables like this could be in violation of JavaScript best practices. This is why in ES5, something known as strict mode was invented:
+
+"use strict"
+
+console.log(this)
+
+function whatIsThis() {
+	return this
+}
+
+
+function variablesInThis() {
+	this.person = "Elie"
+}
+
+variablesInThis()
+// Since we are in strict mode, when we call this function, we get a type error,
+// since in strict mdoe, "this" is considered undefined when used not inside a declared object
+// like for example the function. Thus, we get a type error
+
+
+whatIsThis()
+// We get undefined
+
+
+(2) Implicit/Object
+- Formally, this rule states that when "this" is used INSIDE of a declared object, it takes on the value of the 
+nearest parent object
+
+var person = {
+	firstName: "Elie",
+	sayHi: function() {
+		return "Hi " + this.firstName
+
+	},
+	determineContext: function() {
+		return this === person
+	}
+}
+
+- So, person.sayHi() will return "Hi Elie". If we run, person.determineContext() we obtain true. ("this" is referring to the closest parent object, which in this case is person)
+
+
+- Another example of an object is the following:
+
+var person = {
+	firstName: "Colt",
+	sayHi: function() {
+		return "Hi " + this.firstName
+
+	},
+	determineContext: function() {
+		return this === person
+	},
+
+	dog: {
+		sayHello: function(){
+			return "Hello " + this.firstName;
+		},
+		determineContext: function() {
+			return this === person;
+		}			
+	}
+}
+
+What will person.dog.sayHello and person.dog.determineContext return?
+
+person.dog.sayHello will return "Hello undefined" since "this" refers to the dog object in this case, which has no sayHello property attached to it. By the same
+reasoning person.dog.determineContext will return "false"
+
+
+(3) Explicit Binding
+
+Using the methods Call, Apply, and Bind we can explicity set the value of "this"
+
+Call - For example, looking at the previous code block, we could change the person.Dog.sayHello to something else like person.dog.sayHello.call(person). This makes 
+it so that "this" is referring to the person object, so we get the correctly printed out string. Likewise, we could do person.dog.determineContext.call(person), which
+would return true.
+
+Common use case: Let's say we had the following two objects
+
+var colt = {
+	firstName: "Colt",
+	sayHi: function() {
+		return "Hi " + this.firstName 
+	}
+}
+
+var elie = {
+	firstName: "Elie"
+}
+
+What if we wanted to call the method sayHi for Elie? We could the following colt.sayHi.call(elie). We can "borrow" the method this way. 
+
+
+Apply - This is basically the same thing as call except we pass in the parameters to the function in a different way. Instead of being comma seperated, we pass
+all of them together in an array:
+
+If we had a function taking number parameters, colt.addNumbers.call(elie, 1, 2, 3, 4) is identical to colt.addNumbers.apply(elie, [1,2,3,4]).
+
+
+Bind - Again, this method is fairly similar to Call and Apply, except with bind we don't need to know all the parameters to a function upfront.
+We can supply the parameters at a later time if we desired. So, for example for the addNumbers example from before:
+
+var elieCalc2 = colt.addNumbers.bind(elie, 1, 2)
+
+then later on....
+
+elieCalc(3, 4) // We are returned Elie just calculated 10
+
+This has practical applications in something known as Asynchronous code, (or code that does not run line by line). Since,
+Call and Apply invoke the function immediately, while Bind returns a function that can can be later executed, which will
+have the correct context set for calling the original function. This is what gives Bind a lot of functionality when working
+with asynchronous code.
+
+
+Here is an example:
+
+var colt = {
+    firstName: "Colt",
+    sayHi: function() {
+                setTimeout(function(){
+                    console.log("Hi " + this.firstName)
+                }, 1000)
+           }
+}
+
+What do we expect to be printed out when calling colt.sayHi()
+
+We expect that Hi Colt, will be printed out since we have learned that since "this" is declared inside of an object, it will
+take on the value of that object. However, since the setTimeout method is called at a later time, this is referring
+to the context of the global object, which will result in an output of "Hi undefined"
+
+This is where we can use bind to ensure we get the correct output.
+
+var colt = {
+    firstName: "Colt",
+    sayHi: function() {
+                setTimeout(function(){
+                    console.log("Hi " + this.firstName)
+                }.bind(this), 1000)
+           }
+}
+
+Now colt.sayHi() will print out Hi Colt.
+
+(4) The "new" keyword
+- The new keyword is reserved, which when used will refer to the new object being created
+
+function Person(firstName, lastName) {
+    this.firstName = firstName
+    this.lastName = lastName
+}
+undefined
+
+var elie = new Person("Elie", "Schoppik")
+undefined
+
+elie.firstName
+"Elie"
+
+this.firstName
+undefined
+________________________________________________________________________________________________________________
+
+OOP (Object Oriented Programming) in JavaScript
+
+- Unlike other languages such as Java, Python, Ruby, JavaScript is not explicitly designed to support OOP
+
+- We can simulate OOP through the use of special functions and objects
+
+- Unlike what we have been lead to believe before, the new keyword does a lot more:
+	(1) It creates an empty object
+	(2) Sets the keyword "this" to be that empty object
+	(3) It adds the line "return this" to the end of the function that follows it (returns the new object)
+	(4) Adds a property onto the empty object called __proto__, which links the prototype property on the 
+	    constructor function to the empty object. (sidenote, the __ symbol is known as dunder)
+
+
+- Some practice:
+
+function Dog(name, age){
+    this.name = name;
+    this.age = age;
+
+    function bark() {
+        console.log(this.name + " just barked!");
+    }
+
+}
+undefined
+const rusty = New Dog("Rusty", 3)
+VM2878:1 Uncaught SyntaxError: Unexpected identifier
+const rusty = New Dog("Rusty", 3);
+VM2886:1 Uncaught SyntaxError: Unexpected identifier
+var rusty = New Dog("Rusty", 3);
+VM2913:1 Uncaught SyntaxError: Unexpected identifier
+function Dog(name, age){
+    this.name = name;
+    this.age = age;
+
+    this.bark = function() {
+        console.log(this.name + " just barked!");
+    }
+
+}
+undefined
+var rusty = New Dog("Rusty", 3);
+VM2971:1 Uncaught SyntaxError: Unexpected identifier
+var rusty = new Dog("Rusty", 3);
+undefined
+rusty.bark()
+
+Multiple Constructors
+
+Consider the following two constructor functions:
+
+function Car(make, model, year) {
+	this.make = make;
+	this.model = model;
+	this.year = year;
+	// We can also have preset properties for the object
+	this.numWheels = 4;
+}
+
+function Motorcycle(make, model, year) {
+	this.make = make;
+	this.model = model;
+	this.year = year;
+	// We can also have preset properties for the object
+	this.numWheels = 2;
+}
+
+- We can see that there is a lot of duplicated code between the two constructors
+
+- Is there a way to modify the Motorcycle constructor so that not as much code is duplicated?
+
+
+We could do refactor the code of Motorcycle to look like the following:
+
+function Motorcycle(make, model, year) {
+	Car.call(this, make, model, year);
+	this.numWheels = 2;
+}
+
+- We want to borrow code from Car, but we also want "this" to still refer to the Motorcycle object
+
+- So we use the "call" keyword and pass in "this", which in this context refers to the Motorcycle object
+
+- We could also optionally shorten this line to the following Car.apply(this, arguments)
+
+- Recall, that apply is the same thing as call, but as a parameter it takes an array of arguments
+
+- For our purposes, we can consider arguments to be an array of arguments
+
+
+Prototypes
+
+- Recall the fourth property of "new" that we covered briefly but did not go into detail
+
+- See the image I saved to Desktop to see the full relationship between objects created by new
+
+- Code example:
+
+function Person(name) {
+	this.name = name;
+}
+
+var elie = new Person("Elie");
+var colt = new Person("Colt");
+
+elie.__proto__ === Person.prototype; // return "true"
+colt.__proto__ === Person.prototype; // return "true"
+
+Person.prototype.constructor === Person;
+
+- Now why exactly is all this important? Read on..
+
+- Let's say we wanted to add a particular property to objects that have already been created by a constructor function
+
+- Consider the following constructor function:
+
+	function Person(name) {
+		this.name = name;
+	}
+
+- And we have already instantiated two Person instances like the following:
+	
+	var elie = new Person("Elie");
+	var colt = new Person("Colt");
+
+- Then, to add a property to the already instantiated instances of the class, we can do Person.prototype.isInstructor = true;
+
+- This is actually how JavaScript is able to detect methods for various instantiated classes
+
+- For example, when we call a method on an Array instance (Ex. pop()), first JavaScript looks for the method in that object, then it goes to its dunder proto, and so on
+until the method is found 
+
+- This is what we call the Prototype chain (see the image saved to desktop).
+
+- Now that we have this information, we can refactor a lot of code so that the methods are defined seperately from the constructor, making our code cleaner
+
+
+Exercise:
+
+	function Vehicle(make, model, year) {
+		this.make = make;
+		this.model = model;
+		this.year = year;
+		this.isRunning = false;
+	}
+
+	Vehicle.protoype.turnOn = function() {
+		this.isRunning = true;
+	}
+
+	Vehicle.protoype.turnOff = function() {
+		this.isRunning = false;
+	}
+
+	Vehicle.prototype.honk = function() {
+		if(this.isRunning) {
+		   return "beep";
+		}
+	}
+
+
+Closures
+
+Formal Definition for Closures: A closure is a function that makes use of variables defined in outer functions that have previously returned
+
+example:
+
+function outer(a) {
+	function inner(b) {
+		
+		return a + b
+	
+	}
+}
+
+- We have to return the inner function in order for this to work
+
+- We either call the inner function right away by using an extra () or we can store the result of the function in a variable
+
+ex. outer(5)(5) // 10
+
+    var storeOuter = outer(5)
+
+    storeOuter(10) //15
+
+
+- We can also make the inner function anonymous, we just added a name to it for learning purposes
+
+- A key way to differentiate between closures and nested functions is that, the inner function must make use of the variables defined from an outer function
+
+- Then, it is a closure, otherwise it is simply just a set of nested functions
+
+
+- Real use case: Other languages like Java support the use of private vriables, or variables that cannot be modified externally
+
+- We do not have that in JavaScript, so we use closures to solve that issue:
+
+function counter() {
+	var count = 0
+	return function() {
+		return ++count;
+	}
+
+}
+
+counter1 = counter()
+counter1() // 1
+counter1() // 2
+
+count //referenceError: it is not defined
+
+- So, by defining the varaible this way we are able to restrict access
+
+- Another example:
+
+function classRoom() {
+	var instructors = ["Colt", "Elie"]
+	return {
+		getInstructors: function() {
+			return instructors;
+		},
+		
+		addInstructor: function(instructor) {
+			instructors.push(instructor);
+			return instructors;
+		}	
+	}
+}
+
+- We have restricted access to the array instructors, we can only display the instructors or add an additional instructor.
+
+
+
+
+
+
+
+
+

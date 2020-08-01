@@ -1,0 +1,18 @@
+{
+  "name": "apis",
+  "version": "1.0.0",
+  "description": "Making API requests using Node",
+  "main": "first_request.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Adit Krishnan",
+  "license": "ISC",
+  "dependencies": {
+    "request": "^2.88.2",
+    "request-promise": "^4.2.5"
+  },
+  "devDependencies": {
+    "locus": "^2.0.0"
+  }
+}

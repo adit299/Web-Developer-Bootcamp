@@ -1,0 +1,20 @@
+body {
+	background: orange;
+}
+
+li {
+	border: 2px solid red;
+}
+
+/*If we want to single out a particular element to be colored differently, we give it a special ID in HTML, and reference it here in CSS*/
+/*To select the class, we use an octothorp*/
+/*It is known as a hook*/
+#special {
+	background: yellow;
+}
+
+/*When we want to apply a line through multiple elements, we can create a class and have each of the elements reference the class, so that we
+we don't have to individually style each element*/
+.completed {
+	text-decoration: line-through;
+}

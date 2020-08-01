@@ -1,0 +1,43 @@
+/*In order for our divs to be side by side, we can add an extra property to div known as "float: left" which basically*/
+/*ensures that for each of our divs, it will end up side to side as opposed to ontop of each other*/
+
+img {
+	/*Note that without the float parameter, the browser automatically adds whitespace between the pictures which*/
+	/*was not specified. Using the float parameter, we regain control to add margin or the amount of space that suits*/
+	/*us.*/
+	/*Note: percentage means 30% of the parent element (in this case the body)*/
+	width: 30%;
+	float: left;
+	margin: 1.66%;
+	/*Why is the margin 1.66% ?*/
+	/*Each image has a width of 30%, so the three pictures together take up 90% of the webpage*/
+	/*Then on either side of the image, there are two margins, so in a row, we have six total margins.*/
+	/*Then in total, to be equally spaced, we have margin of 10/6 = 1.66% for each image.*/
+}
+
+p {
+	font-family: 'Raleway', sans-serif;
+	margin-left: 1.66%;
+	font-size: 23px;
+	font-weight: 800;
+	text-transform: uppercase;
+	width: 30%;
+	border-bottom: 2px solid #f1f1f1;
+	padding-bottom: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

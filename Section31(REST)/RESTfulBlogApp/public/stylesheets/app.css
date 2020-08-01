@@ -1,0 +1,14 @@
+i.icon {
+    font-size: 2em;
+}
+
+/* Recall that adding two classes back to back like this 
+means the element has to be a part of both classes to be selected*/
+.container.main {
+    margin-top: 7.0em;
+}
+
+/* To make our edit and delete button inline */
+#delete {
+    display: inline;
+}

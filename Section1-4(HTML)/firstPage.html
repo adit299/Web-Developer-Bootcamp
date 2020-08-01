@@ -1,0 +1,81 @@
+
+<!-- This beginning part indicates that our HTML content is working with HTML 5 -->
+<!-- To get this boiler plate quickly, just type HTML and hit tab -->
+<!DOCTYPE html>
+<!-- The HTML Root element represents to us the root of an HTML document, and all other elements must be descendents of this element -->
+<!-- Every HTML document contains the two tags <head> and <body> -->
+<!-- Metadata contains (contained in the head tag) machine-readable information, about the document like title, scripts, and style-sheets -->
+<!-- Body contains the main conetent of the HTML file -->
+<html>
+<head>
+	<title>My First Page</title>
+	<!-- The title element controls what shows up on the title for the tab -->
+</head>
+<body>
+	<!-- The H1 - H6 elements are the heading elements from largest to smallest (note that H1 - H6 are block level element (they add space)) -->
+	<h1>This is my first tag!</h1>
+	<h2> This is another heading </h2>
+	<h6> This is the smallest heading </h6>
+
+	<!-- Another example of block level elements are the P tags -->
+	<!-- The strong tag is an example of the inline elements, since it does not disrupt the spaces of the block text  -->
+
+	<p> <STRONG>Lorem ipsum</STRONG> dolor sit <em>amet</em>, consectetur adipiscing elit. Cras finibus magna ut tortor eleifend, nec commodo tellus molestie. Ut nec ligula sit amet magna ullamcorper pellentesque. Donec tincidunt ante vitae libero dapibus, nec dapibus nulla tincidunt. Fusce finibus pharetra ligula ut rutrum. Aliquam et imperdiet turpis. Sed fringilla gravida elit, fringilla luctus est ullamcorper id. Maecenas finibus aliquam mauris, at viverra elit vehicula ut. Nulla facilisi. Nam ut posuere elit, auctor porttitor enim. </p>
+
+	<p> Nunc ac lectus semper, varius ante sit amet, tristique mi. Curabitur magna turpis, mollis id ullamcorper at, auctor vel diam. Ut at condimentum felis, sit amet pellentesque erat. Sed porttitor dictum justo sed imperdiet. Fusce finibus suscipit erat, ac fringilla est condimentum eget. Nullam mattis cursus finibus. Donec id augue eu odio tincidunt congue. Aenean consectetur vestibulum ante finibus finibus.
+	</p>
+
+	<!-- Examples of attributes, which add images or links to other webpages -->
+
+	<img src="https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2017/11/25201637/day_2_dec_14_085.jpg">
+
+	<!-- Known as an anchor tag, allows you to link to other webpages -->
+	<!-- Note that for a URL, we have to explicitly specify and add the HTTP portion at the beginning of the URL, to switch to HTTP protocol. Otherwise, we will be left in the file system protocol -->
+	<!-- We can also link pages that we have created through A tags, by simply linking the page name using an A tag -->
+	<a href="http://www.google.com">Click Here for Google</a>
+
+	<!-- Notice the differences between ordered and unordered list elements (and note that list elements can be nested) -->
+	<ol>
+		<li>Red</li>
+		<li>Orange</li>
+		<li>Yellow</li>
+		<ul>
+			<li>Sunflower</li>
+			<li>Banana</li>
+		</ul>
+	</ol>
+
+	<!-- Tables -->
+	<!-- Note that using the border attribute is not a good idea, it is an outdated way of getting borders around your attributes -->
+	<!-- th represents "table headings" while tr is table rows. td are regular elements in the table row  -->
+	<!-- The tbody and thead tags do not make any difference to the visuals of the table itself, it more a stylistic choice, in line with HTML5 methodology -->
+	
+	<table border="1">
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>Age</th>
+		</tr>	
+	</thead>
+	<tbody>
+		<tr>
+			<td>Rusty</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>Wyatt</td>
+			<td>13</td>
+		</tr>
+	</tbody>
+	</table>
+
+</body>
+
+
+
+
+
+
+
+</html>
+

@@ -1,0 +1,37 @@
+/*In the solutions, the box had a max-width parameter set to 700px, this ensures that this width is maintained as much as possible, before*/
+/*shrinking further when the window is resized*/
+
+body {
+	border: 20px solid #bdc3c7;
+	margin: 20px auto;
+	width: 60%;
+	padding: 5px 20px;
+}
+
+p {
+	font-family: 'Source Sans Pro', sans-serif;
+}
+
+h1 {
+	font-family: 'Source Sans Pro', sans-serif;
+	font-weight: 700;
+}
+
+/*In the solutions, the date is enclosed by a div which has parameter text-transform: uppercase and letter-spacing: 10rem*/
+/*rem refers to the spacing of the root element, so 0.2rem is adding 0.2 spacing to the text*/
+h4 {
+	font-family: 'Source Sans Pro', sans-serif;
+	color: #3498db;
+	letter-spacing: 0.2em;
+}
+
+
+/*Could play around more with the hr element, to make it look more appealing*/
+hr {
+	border: 1px solid #f1f1f1;
+}
+
+.quote {
+	border-left: 10px solid #bdc3c7;
+	padding-left: 5px;
+}

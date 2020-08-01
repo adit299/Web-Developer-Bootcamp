@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Image Gallery</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<!-- By adding this fontawesome link, we gain access to a number of nice looking icons we can use in our own project -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+	<style type="text/css">
+		.image {
+ 			 width: 100%;
+  			 height: 250px;
+  			 background-size: cover;
+  			 background-position: center;
+		}
+
+		body {
+			padding: 70px;
+		}
+
+		/*We can use CSS selecting to select the Bootstrap elements and style them with various colors*/
+
+		.jumbotron {
+			color: #2c3e50;
+			background: #ecf0f1;
+		}
+
+		.navbar {
+			background: #2c3e50;
+		}
+
+		/*We obtained these selectors by inspecting element on the navbar elements*/
+		.navbar-inverse .navbar-nav>li>a {
+			color: #ffffff;
+		}
+
+		.navbar-inverse .navbar-brand {
+    		color: white;
+		}
+	</style>
+</head>
+<body>
+		<!-- Note this is just the default navbar we worked on in the navbars.html lesson -->
+		<!-- If we change navbar default to navbar inverse, we get a dark navbar as opposed to a light one -->
+		<!-- Adding the navbar-fixed-top, we can ensure the navbar doesn't scroll with the webpage -->
+		<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+	        		<span class="sr-only">Toggle navigation</span>
+	        		<span class="icon-bar"></span>
+	        		<span class="icon-bar"></span>
+	        		<span class="icon-bar"></span>
+      			</button>
+				<a href="#" class="navbar-brand"> <span class="glyphicon glyphicon-picture" aria-hidden="true"></span> Adit Krishnan</a>
+			</div>
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav">
+						<li><a href="#">About</a></li>
+						<li><a href="#">Contact</a></li>
+					</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="#">Sign Up</a></li>
+					<li><a href="#">Login</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<div class="container">
+		<div class="jumbotron">
+			<!-- Bootstrap glyphicons can be used to add simple icons to our webpage -->
+			<h1><i class="fab fa-bootstrap"></i></span> The Image Gallery</h1>
+			<p>My First Bootstrap project</p>	
+		</div>
+		<!-- Not sure how to crop the images so that it fit perfectly within the grid image slots -->
+		<div class="row">
+			<div class="col-md-4 col-sm-6">
+				<div class="thumbnail image">
+					<img src="https://source.unsplash.com/hiNOstPUM2w">
+				</div>
+			</div>
+			<div class="col-md-4 col-sm-6">
+				<div class="thumbnail image">
+					<img src="https://source.unsplash.com/FLW1hPzknhM">
+				</div>
+			</div>
+			<div class="col-md-4 col-sm-6">
+				<div class="thumbnail image">
+					<img src="https://source.unsplash.com/4tg2iB_S9AI">
+				</div>
+			</div>
+			<div class="col-md-4 col-sm-6">
+				<div class="thumbnail image">
+					<img src="https://source.unsplash.com/lWE2gVjdM-Q">
+				</div>
+			</div>
+			<div class="col-md-4 col-sm-6">
+				<div class="thumbnail image">
+					<img src="https://source.unsplash.com/iKrJ2LxqnT8">
+				</div>
+			</div>
+			<div class="col-md-4 col-sm-6">
+				<div class="thumbnail image">
+					<img src="https://source.unsplash.com/HoupC-zHlLo">
+				</div>
+			</div>
+			<div class="col-md-4 col-sm-6">
+				<div class="thumbnail image">
+					<img src="https://source.unsplash.com/m63X_rwrtvA">
+				</div>
+			</div>
+			<div class="col-md-4 col-sm-6">
+				<div class="thumbnail image">
+					<img src="https://source.unsplash.com/RBUhEsQ5uOU">
+				</div>
+			</div>
+			<div class="col-md-4 col-sm-6">
+				<div class="thumbnail image">
+					<img src="https://source.unsplash.com/Ek-BbDtc3eQ">
+				</div>
+			</div>
+		</div>
+	</div>
+
+<script
+  src="http://code.jquery.com/jquery-2.2.4.js"
+  integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
+  crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</body>
+</html>

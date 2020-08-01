@@ -1,0 +1,65 @@
+/*font-family*/
+/*Controls the type of font that will be displayed for the webpage*/
+/*Note that often times, we have to check on websites like CSS stack for whether certain fonts are supported by machines*/
+p {
+	font-family: Arial;
+}
+
+h1 {
+	font-family: Georgia;
+}
+
+/*font-size*/
+/*Controls size of font*/
+h1 {
+	font-size: 200px;
+}
+
+/*Another way to control size is to do the following, em simply refers to the text size of the rest of the characters in the paragraph*/
+/*Sometimes, this is preferred since it is a more dynamic way to style elements (if we change paragraph font size, this remains double the size)*/
+/*The default value of em is the default font size of the browser, which in most cases is 16px*/
+/*So it is preferred that you set the default fontsize of the body beforehand, so that em behaves as expected */
+span {
+	font-size: 2.0em;
+}
+
+/*font-weight*/
+/*Refers to the boldness of the font*/
+/*Note that certain fonts will allow you to input a numerical value here, such as a value between 100-800 (going up by 100)*/
+p {
+	font-weight: bold;
+}
+
+/*line-height*/
+/*Refers to the amount of space between lines of text*/
+p {
+	line-height: 2;
+}
+
+/*text-align*/
+/*Refers to the alignment of the text*/
+h1 {
+	text-align: right;
+}
+
+p {
+	text-align: center;
+}
+
+/*text-decoration*/
+/*Any additional characteristics of the text*/
+
+p {
+	text-decoration: underline;
+}
+
+h1 {
+	text-decoration: line-through;
+}
+
+
+
+
+
+
+

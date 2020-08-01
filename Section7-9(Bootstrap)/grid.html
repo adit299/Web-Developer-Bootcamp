@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Bootstrap Grid System</title>
+	<!-- A key point about the grid system is that every container in Bootstrap has 12 columns, and using the grid system -->
+	<!-- we can choose how many of the 12 columns a particular element will take up -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<style type="text/css">
+		.pink {
+			background: pink;
+			border: 1px solid purple;
+		}
+		.orange {
+			background: orange;
+			border: 1px dashed red;
+			height: 50px;
+		}
+	</style>
+
+</head>
+<body>
+	<div class="container">
+		<!-- Right here we have created two elements each take up 6 out of the 12 available columns -->
+		<!-- We could also have an element taking up 2 columns, followed by an element taking 8 columns, -->
+		<!-- ending with a column taking up 2 columns -->
+		<!-- Or we can have 12 individual columns each of size 1 -->
+		<!-- <div class="row">
+			<div class="col-md-1 col-md-2 pink">COL MD 1</div>
+			<div class="col-md-1 col-md-2 pink">COL MD 1</div>
+			<div class="col-md-1 col-md-2 pink">COL MD 1</div>
+			<div class="col-md-1 col-md-2 pink">COL MD 1</div>
+			<div class="col-md-1 col-md-2 pink">COL MD 1</div>
+			<div class="col-md-1 col-md-2 pink">COL MD 1</div>
+			<div class="col-md-1 col-md-2 pink">COL MD 1</div>
+			<div class="col-md-1 col-md-2 pink">COL MD 1</div>
+			<div class="col-md-1 col-md-2 pink">COL MD 1</div>
+			<div class="col-md-1 col-md-2 pink">COL MD 1</div>
+			<div class="col-md-1 col-md-2 pink">COL MD 1</div>
+			<div class="col-md-1 col-md-2 pink">COL MD 1</div>
+		</div> -->
+			<!-- When we put column size following another, this means that when the screen reaches the "small" breakpoint, -->
+			<!-- it reverts to that size as opposed to stacking on ontop of another -->
+			<!-- After having added the col-xs-6 term, this tells us that when we revert to the extra small breakpoint, the  -->
+			<!-- Columns stack with 2 on each row -->
+			<!-- Note that we don't have to specify the md and sm column size, bootstrap already knows md is set to 3 after seeing -->
+			<!-- the xs size already set -->
+			<!-- <div class="col-md-3 col-sm-3 col-xs-6 pink">COL MD 3</div>
+			<div class="col-md-3 col-sm-3 col-xs-6 pink">COL MD 3</div>
+			<div class="col-md-3 col-sm-3 col-xs-6 pink">COL MD 3</div>
+			<div class="col-md-3 col-sm-3 col-xs-6 pink">COL MD 3</div> -->
+
+			<!-- If we nest two rows with columns, we can split the existing column into two parts -->
+			<div class="row">
+				<div class="col-sm-3 col-xs-6 pink">
+					<div class="row">
+						<div class="col-md-6 orange">First Half</div>
+						<div class="col-md-6 orange">Other Half</div>
+					</div>
+				</div>
+			<!-- <div class="col-sm-3 col-xs-6 pink">COL MD 3</div> -->
+			<div class="col-sm-3 col-xs-6 pink">COL MD 3</div>
+			<div class="col-sm-3 col-xs-6 pink">COL MD 3</div>
+			<div class="col-sm-3 col-xs-6 pink">
+					<div class="row">
+						<!-- So note that even the nested row still divides into 12 parts -->
+						<div class="col-md-2 orange"></div>
+						<div class="col-md-2 orange"></div>
+						<div class="col-md-2 orange"></div>
+						<div class="col-md-2 orange"></div>
+						<div class="col-md-2 orange"></div>
+						<div class="col-md-2 orange"></div>
+					</div>
+				</div>
+			</div>
+	</div>
+
+</body>
+</html>

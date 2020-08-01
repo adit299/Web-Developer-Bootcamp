@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>FormsAssignment</title>
+</head>
+<body>
+	<!-- Mistakes I Made: -->
+	<!-- Instead of paragraphs, I should be using div to seperate the sections -->
+	<!-- For password, make the input type password, and use pattern (min and max length apparently have limited browser support)  -->
+	<!-- For the drop down menus, I should add <option value="0" selected disabled>Year</option> "selected disabled", so that the year option is not something a user can select (or month or day) -->
+	<!-- Make the final button to submit, a type submit button -->
+	<h1>Register</h1>
+	<form>
+		<label for="firstname">First Name: </label>
+		<input id="firstname" name="FirstName" type="text" placeholder="John" required>
+		<label for="lastname">Last Name: </label>
+		<input id="lastname" name="LastName" type="text" placeholder="Smith" required>
+		<p>
+			<label for="male">Male</label>
+			<input name="Gender" type="radio" id="male" value="male">
+			<label for="female">Female</label>
+			<input name="Gender" type="radio" id="female" value="female">
+			<label for="other">Other</label>
+			<input name="Gender" type="radio" id="other" value="other">
+		</p>
+
+		<p>
+			<label for="email">Email: </label>
+			<input type="email" name="email" placeholder="your email" required>
+
+			<label for="password">Password: </label>
+			<input id="password" name="password" type="text" minlength="5" maxlength="10" required>
+		</p>
+
+		<p>
+			<label for="Month">Birthday: </label>
+			<select name="Month">
+				<option value="month">Month</option>
+				<option value="Jan">January</option>
+				<option value="Feb">Febuary</option>
+			</select>
+			<select name="Day">
+				<option value="day">Day</option>
+				<option value="1">1</option>
+				<option value="2">2</option>
+			</select>
+			<select name="Year">
+				<option value="year">Year</option>
+				<option value="2020">2020</option>
+				<option value="2019">2019</option>
+			</select>
+		</p>
+
+		<p>
+			<label for="terms">I agree to the terms and conditions </label>
+			<input type="checkbox" name="terms" id="terms">
+		</p>
+
+		<p>
+			<button>Submit</button>
+		</p>
+	</form>
+</body>
+</html>

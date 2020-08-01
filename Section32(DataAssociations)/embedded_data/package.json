@@ -1,0 +1,14 @@
+{
+  "name": "embedded_data",
+  "version": "1.0.0",
+  "description": "Practice with embedded data",
+  "main": "embed.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Adit Krishnan",
+  "license": "ISC",
+  "dependencies": {
+    "mongoose": "^5.9.14"
+  }
+}

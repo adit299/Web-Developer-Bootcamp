@@ -1,0 +1,37 @@
+p {
+/*Content*/
+/*We can alter the width, by using the width parameter*/
+/*We can alter it by using the exact pixel widths and heights or by using percentages*/
+/*What does the percentage refer to? It refers to the percentage of the webpage covered by the border, so it will change if the weboage is extended*/
+
+/*width: 200px;*/
+width: 50%;
+/*height: 300px;*/
+
+/*Border*/
+/*Note that after adding a border around the text, this border extends to the end of the page*/
+/*How can we change that?*/
+border: 2px solid blue;
+
+/*Padding*/
+/*Padding refers to the amount of space between the element and the border*/
+/*If we want to set the padding to be only on one side, we can use parameters like "padding-left", "padding-right",etc.*/
+/*padding: 40px;*/
+padding-left: 40px;
+
+
+/*Margin*/
+/*To the space outside of the border and between elements*/
+/*Just like with padding, we can alter the parameters to be just to the left, right, or top.*/
+/*margin-top: 500px;*/
+/*We can also set all 4 margin parameters at once by doing something like the following*/
+margin: 20px 40px 500px 100px;
+/*The four sides are margin: top right bottom left*/
+/*If we want it to automatically center an element, we can set the margin equal to "auto"*/
+/*margin: 0 auto 0 auto;*/
+/*We can also use the notation margin: top/botton left/right*/
+/*margin: 0 auto;
+margin: 50px 20px;*/
+
+
+}

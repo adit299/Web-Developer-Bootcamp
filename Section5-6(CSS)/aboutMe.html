@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>About Me</title>
+	<style type="text/css">
+		/*selector {
+			property: value;
+		}*/
+		/*This is an example of the style tag method of styling, this allows us to select tags, and style, note that it selects all tags of the type*/
+		/*Another thing to note is that the style that comes last is the one applied (notice that with the h1 element and li element)*/
+		h1 {
+			color: purple;
+		}
+		li {
+			color: orange;
+		}
+		h1 {
+			color: blue;
+		}
+	</style>
+
+	<!-- Finally, this is the best method of styling, using a link tag, which seperates all styling elements into a seperate CSS file -->
+	<!-- Note that this element must be in the head section of the file, and href is simply an attribute that gives you a reference to another file -->
+
+	<link rel="stylesheet" type="text/css" href="app.css">
+
+
+</head>
+<body>
+	<h1>About Me</h1>
+	<h1>About Me</h1>
+	<h1>About Me</h1>
+	<h4>My Hobbies</h4>
+	<ul>
+		<!-- This is an example of the inline method of styling HTML elements, however, this is not a good practice because: -->
+		<!-- (1) If we want to change all the colors to something different, we have to edit each individual element -->
+		<!-- (2) It goes back to this seperation of concerns, we want the CSS to be seperate from the HTML -->
+		<li style="color: purple;">Running</li>
+		<li style="color: purple;">Reading</li>
+		<li style="color: purple;">MMA</li>
+	</ul>
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+/*Type Selectors*/
+ li {
+
+ }
+
+
+/*Note that these two are more specific than the above type selector*/
+ li a {
+
+ }
+
+ li + a {
+
+ }
+
+ /*Class, Attribute, and Pseudo-Class Selectors*/
+ .hello {
+
+ }
+
+ input[type="text"] {
+
+ }
+
+ input:checked
+
+
+ /*ID Selectors*/
+
+ #hello
+
+ /*So overall, the specifity is going from least specific (type selectors) to most specific (ID Selectors)*/
+
+
+
+
+
+
+
+

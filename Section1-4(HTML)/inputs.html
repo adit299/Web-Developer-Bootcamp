@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Inputs Demo</title>
+</head>
+<body>
+	<!-- Typically, radio buttons are used when there is only one option the user has to specify (ex. gender) -->
+	<!-- Checkbox is used when there are multiple options that need to be clicked (ex. job skills) -->
+	<!-- Note that both the input tags contain the same name, this ensures that we can only pick one, as opposed to both -->
+	<!-- The value attribute added under each input tag is to ensure that the resulting query string has the appropriate value assoicated with the selection (by default it will just say ON) -->
+	<!-- Note, instead of button, we could have input type submit -->
+	<!-- By the same idea, for our dropdown menu, we have to give it an attribute name, so that the resulting query string has the correct value -->
+	<!-- Note that within the dropdown menu, we can give each of the options a value attribute, so that this is added to the resulting query string, instead of the value within the tag -->
+
+	<input type="radio">
+	<input type="checkbox">
+	<p>Do you prefer cats or dogs?</p>
+	<form>
+		<label for="dogs">Dogs: </label>
+		<input name="petChoice" type="radio" id="dogs" value="DOGS">
+		<label for="cats">Cats: </label>
+		<input name="petChoice" type="radio" id="cats" value="CATS">
+
+		<p>What's your current mood?</p>
+		<select name="mood">
+			<option value="happy">:)</option>
+			<option value="neutral">:|</option>
+			<option value="sad">:(</option>
+		</select>
+
+		<!-- This is the standard text input tag, however, we can choose to have a bigger text area tag if necessary -->
+		<!-- As with any of the other input tags, we give it a name so that the correct value is added to our query string -->
+		<input type="text">
+
+		<textarea name="paragraph" rows="10" cols="10"></textarea>
+
+		<button>GO!</button>
+	</form>
+
+</body>
+</html>

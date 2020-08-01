@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Specifity</title>
+	<!-- In this case, note that two different elements are targetting the UL and attempting to style it, the body and ul CSS element -->
+	<!-- The idea of specificity is that the CSS element which is more specific (closer to the element), is the one whose style will be applied -->
+	<!-- We can see that certain elements are being targeted and styles being applied as opposed to others. In general, priority is given by:-->
+	<!-- Inline Styles > Ids > classes > selecting elements -->
+	<style type="text/css">
+		body {
+			color: red;
+		}
+		ul {
+			color: blue;
+		}
+		.highlight {
+			color: yellow;
+		}
+		#special {
+			color: pink;
+		}
+	</style>
+</head>
+<body>
+
+	<p>HELLO!!</p>
+
+	<ul>
+		<li id="special" class="highlight">John</li>
+		<li>Paul</li>
+		<li>George</li>
+		<li class="highlight">Ringo</li>
+	</ul>
+
+</body>
+</html>

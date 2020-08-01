@@ -1,0 +1,14 @@
+{
+  "name": "references",
+  "version": "1.0.0",
+  "description": "Data References",
+  "main": "references.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Adit Krishnan",
+  "license": "ISC",
+  "dependencies": {
+    "mongoose": "^5.9.14"
+  }
+}

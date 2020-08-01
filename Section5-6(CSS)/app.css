@@ -1,0 +1,31 @@
+/*Standard way to add borders to the H1*/
+/*Another syntax is to combine the three properties listed below into one border property*/
+h1 {
+	color: rgba(0, 200, 100, 0.8);
+	/*border-color: purple;
+	border-width: 5px;
+	border-style: solid;
+*/
+	/*Instead of solid we can also make the border dashed*/
+	border: 5px solid purple;
+}
+
+li {
+	color: green;
+}
+
+h4 {
+	/*We can use the background property to add background color to our text*/
+	background: rgb(255, 100, 80);
+	color: purple;
+}
+
+/*The body property can be used to give the background of the webpage a specific color, or even an image from online*/
+/*Note that the image we chose is not large enough to cover the entire webpage, so it has been repeated (tiled)*/
+/*We can make the background not repeat if we set the property background-repeat*/
+/*Then we can set the property of backgruond size to be cover, to make this image cover the entire webpage*/
+body {
+	background: pink;
+	/*background: url(https://media.istockphoto.com/vectors/wood-textureisolated-outline-vector-illustration-vector-id890886702?b=1&k=6&m=890886702&s=612x612&h=I3RriuOwBN7FvQRWML1y3gwOxWaw9U75dmxfeBYTBuU=);
+	background-repeat: no-repeat;*/
+}
